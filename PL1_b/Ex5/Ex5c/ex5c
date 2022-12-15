@@ -1,0 +1,4 @@
+PL1b - Exercício 5 c)
+
+Quando foi pressionado CTRL-\, o programa foi interrompido, pois o ctrl-\, quando pressionado
+envia o sinal SIQUIT para o programa que está a ser excutado.

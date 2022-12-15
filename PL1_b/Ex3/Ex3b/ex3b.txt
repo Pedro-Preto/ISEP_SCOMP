@@ -1,0 +1,9 @@
+PL1b Exercício 1 b)
+
+int sigaction(int sig, const struct sigaction * act, struct sigaction * oact);
+
+sig -> número do sinal a ser tratado
+
+act -> determina a ação atualmente definida para lidar com sig
+
+oact -> ponteiro para um local de memória onde sigaction() pode armazenar uma estrutura sigaction

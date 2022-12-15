@@ -1,0 +1,18 @@
+/*
+ *  SCOMP: 2021/2022
+ *      Author: isep
+ */
+
+#include <unistd.h>
+#include <stdio.h>
+
+
+int main() {
+    for(;;){
+        printf("I Like Signal\n");
+        sleep(1);
+    }
+}
+
+
+

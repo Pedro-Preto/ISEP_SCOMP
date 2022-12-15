@@ -1,0 +1,17 @@
+
+	a) Output:
+		"1. x = 2
+		 3. 0; x = 1
+		 2. x = 0
+		 3. 1234; x = 0"
+	
+			OR
+
+		"2. x = 0
+		 3. 1234; x = 0
+		 1. x = 1
+		 3. 0; x = 1"
+
+
+	b) Não, depende de qual processo é executado primeiro (como apresentado na alínea anterior existem 2 outputs possiveis).
+	   Se o processo filho for executado primeiro então o printf() da linha 11 é executado pela primeira vez antes do printf() da linha 9.

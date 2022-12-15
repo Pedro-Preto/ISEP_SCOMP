@@ -1,0 +1,11 @@
+a)
+1-Primeiro fazer make run
+2-Abrir outro terminal e fazer ps -e
+3-ver o pid do processo
+
+b)
+4-kill -SIGSTOP pid
+
+c)e d)
+5-kill -SIGKILL pid
+

@@ -1,0 +1,4 @@
+PL1b - Exercício 5 e)
+
+-> O programa deu print a "I won’t let the process end with CTRL-C" no caso de SIGINT
+e "I won’t let the process end with CTRL-\" no caso de SIGQUIT

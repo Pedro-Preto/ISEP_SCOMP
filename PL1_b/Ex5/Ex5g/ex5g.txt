@@ -1,0 +1,3 @@
+PL1b - Exercício 5 g)
+
+-> printf não é seguro para sinais assíncronos

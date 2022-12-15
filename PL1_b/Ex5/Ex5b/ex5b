@@ -1,0 +1,47 @@
+/*
+ *  SCOMP: 2021/2022
+ *      Author: Ana Barreiro (1190353) & Pedro Preto (1190963)
+ */
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <signal.h>
+#include <string.h>
+
+/*
+ * Change the program so that each time a SIGINT signal is received the “I
+ * won’t let the process end with CTRL-C!” message is displayed. Recompile
+ * and run the program and test by pressing several times CTRL-C.
+ */
+
+void handle_signal(int sig){
+    if(sig == SIGINT){
+
+        /* O printf não é adequado neste caso, pois trata-se de async-signal-safe*/
+        write(STDOUT_FILENO, "\nI won’t let the process end with CTRL-C!\n", 40);
+    }
+}
+
+
+int main() {
+
+    /* Setup signal handler */
+    struct sigaction act;
+
+    /* Clear act variable */
+    memset(&act, 0, sizeof(struct sigaction));
+
+    sigemptyset(&act.sa_mask);
+
+    act.sa_handler = handle_signal;
+
+    /* SIGINT é capturado e handled */
+    sigaction(SIGINT, &act, NULL);
+
+    for(;;){
+        printf("I Like Signal\n");
+        sleep(1);
+    }
+}

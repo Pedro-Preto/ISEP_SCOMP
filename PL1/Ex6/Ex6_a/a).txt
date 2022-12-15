@@ -1,0 +1,1 @@
+a) São criados 16 processos 2^4=16.

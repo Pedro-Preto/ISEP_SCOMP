@@ -1,0 +1,5 @@
+PL1b - Exercício 5 a)
+
+
+Quando foi pressionado CTRL-C, o programa foi interrompido, pois o ctrl-c, quando pressionado
+envia o sinal SIGINT para o programa que está a ser excutado.

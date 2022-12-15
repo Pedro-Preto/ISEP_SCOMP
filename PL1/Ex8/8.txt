@@ -1,0 +1,3 @@
+a) O Processo com PID p não aparece na lista pois o processo principal espera que este termine.
+b) O primeiro processo filho fica zombie pois termina primeiro que o pai
+c) kill -SIGKILL <PID_NUMBER>

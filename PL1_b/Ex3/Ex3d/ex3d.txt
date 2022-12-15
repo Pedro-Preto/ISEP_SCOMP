@@ -1,0 +1,4 @@
+PL1 Exercício d)
+
+-> É possível, mas não é seguro, já que pode levar a comportamento indefinido,
+por não se saber quando é que o sinal vai ter que ser tratado.

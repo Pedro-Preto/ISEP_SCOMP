@@ -1,0 +1,1 @@
+Adicionava um exit(i); a seguir ao sleep(1);

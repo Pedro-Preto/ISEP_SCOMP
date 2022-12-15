@@ -1,0 +1,41 @@
+/*
+ *  SCOMP: 2021/2022
+ *      Author: Ana Barreiro (1190353) & Pedro Preto (1190963)
+ */
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <signal.h>
+#include <string.h>
+
+volatile sig_atomic_t USR1_COUNTER = 0;
+
+void handle_signal(int sig){
+
+    USR1_COUNTER++;
+    printf("SIGUSR1 signal captured, USR1_COUNTER = %d\n", USR1_COUNTER);
+}
+
+
+int main() {
+
+    /* Setup signal handler */
+    struct sigaction act;
+
+    /* Clear act variable */
+    memset(&act, 0, sizeof(struct sigaction));
+
+    sigemptyset(&act.sa_mask);
+
+    act.sa_handler = handle_signal;
+
+    /* SIGINT é capturado e handled */
+    sigaction(SIGUSR1, &act, NULL);
+
+    for(;;){
+        printf("I'm working!\n");
+        sleep(1);
+    }
+}

@@ -1,0 +1,4 @@
+PL1 Exercício 3 a)
+
+ -> sigaction(), pois este bloqueia as notificações de novos sinais do mesmo tipo até que o handler
+tenha terminado a sua execução

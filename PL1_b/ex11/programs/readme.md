@@ -1,0 +1,1 @@
+NOTA: É necessário criar os executáveis dos 3 programas (comando **make**) antes de executar o programa principal

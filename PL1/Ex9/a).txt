@@ -1,0 +1,2 @@
+O resultado não é imprimido de forma ordenada pois existem multiplos processos a correr em simultâneo.
+É possível fazer com que o resultado seja ordenado se esperarmos o fim de cada processo filho para iniciar o próximo.

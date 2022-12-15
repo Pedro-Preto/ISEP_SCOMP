@@ -1,0 +1,4 @@
+PL1b - Exercício 5 f)
+
+-> O comando kill %1, significa kill job number 1, ou seja, envia para o job número 1,
+o sinal SIGTERM, que termina o job e não pode ser ignorado.

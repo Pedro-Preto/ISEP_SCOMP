@@ -1,0 +1,8 @@
+a)  São criados 6 processos.
+O primeiro fork cria 2 processos, o segundo cria mais 2 processos (apenas entra no if o processo filho do primeiro fork) 
+e o último cria mais 2 (apenas chega o processo pai do primeiro fork).
+
+
+b) São criadas 2 threads.
+No if apenas entra 1 processo que irá posteriormente sofrer um fork o que dá um total de 2 processos que chegam à linha 7 e criam, cada um,
+uma thread diferente

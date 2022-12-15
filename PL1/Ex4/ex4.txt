@@ -1,0 +1,4 @@
+a)
+O "a" do primeiro processo vai ser igual ao "a" do segunto processo(5).
+O "b"do primeiro processo vai ser igual ao "c" do segunto processo.
+

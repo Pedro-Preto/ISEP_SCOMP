@@ -1,0 +1,61 @@
+/*
+ *  SCOMP: 2021/2022
+ *      Author: Ana Barreiro (1190353) & Pedro Preto (1190963)
+ */
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <signal.h>
+#include <string.h>
+#include <time.h>
+#include <sys/wait.h>
+
+#define CHILDREN 5
+
+volatile sig_atomic_t count_children = 0;
+
+void handle_signal(int sig, siginfo_t *sinfo, void *context) {
+    count_children--;
+    char buffer[46] = "\0";
+    sprintf(buffer, "\nChild just finished, I still have %d children\n",count_children);
+    write(STDOUT_FILENO, buffer, (sizeof(buffer)+1));
+}
+
+
+
+int main() {
+
+    int status;
+    pid_t p[CHILDREN];
+
+    for(int i = 0; i < CHILDREN; i++){
+
+        p[i] = fork();
+
+        if(p[i] > 0){
+            count_children++;
+
+        } else if (p[i] == 0){
+
+            for(int j = i*200; j <= (i+5) * 200; j++){
+
+                printf("[%d]\n ", j);
+            }
+
+            exit(p[i]);
+        }
+
+        while (count_children != 0){
+            pause();
+            printf("paused\n");
+        }
+
+        for (int j = 0; j < CHILDREN; j++){
+            wait(&status);
+        }
+
+    }
+
+}
